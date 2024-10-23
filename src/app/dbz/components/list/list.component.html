@@ -1,0 +1,31 @@
+<h4>Listado</h4>
+
+@for (character of CharacterList; track $index) {
+  <ul class="list-group ">
+    <li class="items list-group-item  "
+        [ngClass]="{
+    'list-group-item-dark': $last,
+    'list-group-item-primary': $even
+    }">
+      <div>
+        <span class="text-primary"> {{ $index + 1 + '.- ' }}</span>
+        {{ character.name }} - <strong>Poder: </strong>
+        {{ character.power }}
+      </div>
+      <button (click)="onDeleteCharacter(character.id!)" class="btn btn-danger">X</button>
+    </li>
+  </ul>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- (click)="onDeleteCharacter(character.id)"-->
